@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitLife - Fitness Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="logo">🏋️‍♂️ FitLife</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Train Hard. Live Strong.</h1>
+      <h3>You bring the will,we bring the way..!!</h3>
+      <p>Your transformation starts here. Join our fitness community today.</p>
+      <a href="#programs" class="cta-btn">Explore Programs</a>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <h2>About Us</h2>
+    <p>We provide personalized training is designed to match your unique goals,bodytype,lifestyle,and fitness level. Expert guidance, and a supportive community for your fitness journey.</p>
+    <img src="fit.jpeg" alt="About Us" class="section-img">
+  </section>
+
+  <section class="section programs" id="programs">
+    <h2>Our Programs</h2>
+    <div class="program-list">
+      <div class="program-card">
+        <img src="strong.jpeg" alt="Strength Training">
+        <h3>Strength Training</h3>
+        <p>Build muscle and improve endurance with our professional coaches.</p>
+      </div>
+      <div class="program-card">
+        <img src="yoga.jpeg" alt="Yoga">
+        <h3>Yoga & Flexibility</h3>
+        <p>Relax, stretch, and rejuvenate your body and mind.</p>
+      </div>
+      <div class="program-card">
+        <img src="hiit.jpeg" alt="HIIT">
+        <h3>HIIT & Cardio</h3>
+        <p>High-intensity interval training for fat loss and stamina.</p>
+      </div>
+      <div class="program-card">
+        <img src="hybrid.jpeg" alt="HIIT">
+        <h3>Mixed & Hybrid</h3>
+        <p>It combines the elements of strength,cardio,flexibility and mobility into a balanced full body fitness.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email:anuvam@fitlife.com</p>
+    <p>Phone: 8106122756</p>
+
+    <h3>Register Now</h3>
+    <form class="register-form">
+      <input type="text" placeholder="Full Name" required/>
+      <input type="email" placeholder="Email" required/>
+      <input type="tel" placeholder="Phone Number" required/>
+      <button type="submit" class="cta-btn">Register</button>
+    </form>
+    <div id="successMessage" class="success-message" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+  </section>
+
+  <footer>
+    <p>© 2025 FitLife. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const form = document.getElementById('registerForm');
+    const successMessage = document.getElementById('successMessage');
+    form.addEventListener('submit', function(event){
+      event.preventDefault();
+      form.reset();
+      successMessage.textContent = 'Your registration is successfully done!';
+      successMessage.classList.add('visible');
+      setTimeout(() => {
+        successMessage.classList.remove('visible');
+        successMessage.textContent = '';
+      },5000);
+    });
+
+  </script>
+</body>
+</html>
